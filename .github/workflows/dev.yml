@@ -1,11 +1,8 @@
-name: CI
+name: Dev CI
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - "dev/**"
 env: # Set the secret as an input
   docker_username: ${{ secrets.DOCKER_USERNAME }}
   docker_password: ${{ secrets.DOCKER_PASSWORD }}
