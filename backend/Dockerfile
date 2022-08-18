@@ -1,5 +1,7 @@
 FROM golang:1.19-alpine as builder
 
+WORKDIR /
+
 RUN mkdir /build/
 
 COPY ./*.go /build/
@@ -10,8 +12,6 @@ COPY go.sum /build/
 WORKDIR /build/
 
 RUN go build .
-
-CMD [ "go", "run", "." ]
 
 
 FROM alpine:3.16
