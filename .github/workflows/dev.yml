@@ -29,6 +29,8 @@ jobs:
       with:
         name: code
         path: . 
+    - name: pwd
+      run: pwd
     - name: Build with go
       run: chmod +x ci/build-app.sh && ci/build-app.sh
     - name: Test with go
