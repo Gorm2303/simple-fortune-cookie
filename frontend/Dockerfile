@@ -1,12 +1,8 @@
 FROM golang:1.19.0-alpine3.16 as builder
 
-WORKDIR /
-
 RUN mkdir /build/
 
-COPY go.mod /build/
-
-COPY ./*.go /build/
+ADD . /build/
 
 WORKDIR /build/
 
