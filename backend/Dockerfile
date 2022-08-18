@@ -9,7 +9,7 @@ ADD go.sum /build/
 
 WORKDIR /build/
 
-RUN CGO_ENABLED=0 GOOS=linux go build .
+RUN go build .
 
 CMD [ "go", "run", "." ]
 
