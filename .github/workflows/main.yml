@@ -25,7 +25,7 @@ jobs:
   Build:
     runs-on: self-hosted
     needs: Clone-down
-    container: golang:1.19-alpine
+    container: golang:1.19
     steps:
     - name: Download code
       uses: actions/download-artifact@v2
@@ -42,7 +42,7 @@ jobs:
         name: code
         path: .
   Docker-image:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: Build
     steps:
     - name: Download code

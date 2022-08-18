@@ -10,7 +10,7 @@ env: # Set the secret as an input
 jobs:
   Clone-down:
     name: Clone down repo
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     container: golang:1.19-alpine
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
         name: code
         path: .
   Build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: Clone-down
     container: golang:1.19
     steps:
@@ -39,7 +39,7 @@ jobs:
         name: code
         path: .
   Docker-image:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: Build
     steps:
     - name: Download code
