@@ -4,9 +4,9 @@ WORKDIR /
 
 RUN mkdir /build/
 
-COPY ./*.go /build/
-
 COPY go.mod /build/
+
+COPY ./*.go /build/
 
 WORKDIR /build/
 

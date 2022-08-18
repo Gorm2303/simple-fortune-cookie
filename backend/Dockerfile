@@ -4,10 +4,10 @@ WORKDIR /
 
 RUN mkdir /build/
 
-COPY ./*.go /build/
-
 COPY go.mod /build/
 COPY go.sum /build/
+
+COPY ./*.go /build/*
 
 WORKDIR /build/
 
