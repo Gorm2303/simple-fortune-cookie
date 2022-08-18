@@ -1,19 +1,22 @@
 FROM golang:1.19-alpine as builder
 
+WORKDIR /
+
 RUN mkdir /build/
 
-ADD *.go /build/
+COPY ./*.go /build/
 
-ADD go.mod /build/
+COPY go.mod /build/
 
 WORKDIR /build/
 
-RUN CGO_ENABLED=0 GOOS=linux go build .
-
-CMD [ "go", "run", "." ]
+RUN go build .
 
 
 FROM alpine:3.16
 COPY --from=builder /build/frontend .
+
+COPY static ./static
+COPY templates ./templates
 
 ENTRYPOINT [ "./frontend" ]
