@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deployment-backend
+  name: deployment-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-backend
+    spec:
+      containers:
+      - image: gorm2303/simple-fortune-cookie-backend:latest
+        name: backend
+        resources: {}
+status: {}
