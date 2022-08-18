@@ -6,7 +6,7 @@ ADD . /build/
 
 WORKDIR /build/
 
-RUN go build .
+RUN bash ls && go build .
 
 
 FROM alpine:3.16
