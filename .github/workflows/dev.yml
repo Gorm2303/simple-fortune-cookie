@@ -37,6 +37,6 @@ jobs:
           name: code
           path: . 
       - name: build docker
-        run: ./simple-fortune-cookie/ci/build-docker.sh
+        run: ci/build-docker.sh
       - name: push docker
-        run: ./simple-fortune-cookie/ci/push-docker.sh
+        run: ci/push-docker.sh
