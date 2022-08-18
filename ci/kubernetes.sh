@@ -1,2 +1,2 @@
 #!/bin/bash
-kubectl apply 
+kubectl apply -f kubernetes_yaml/

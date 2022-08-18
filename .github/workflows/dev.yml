@@ -56,3 +56,4 @@ jobs:
         name: code
         path: .
     - name: Deploy
+      run: chmod +x ci/kubernetes.sh && ci/kubernetes.sh
