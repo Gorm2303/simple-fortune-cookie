@@ -2,7 +2,7 @@ FROM golang:1.19-alpine as builder
 
 RUN mkdir /build/
 
-COPY *.go /build/
+COPY ./*.go /build/
 
 COPY go.mod /build/
 
