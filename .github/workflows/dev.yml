@@ -36,6 +36,8 @@ jobs:
         run: |
           pwd
           ls
+          pwd /backend
+          ls /backend
       - name: build docker
         run: chmod +x ci/build-docker.sh && ci/build-docker.sh
       - name: push docker
