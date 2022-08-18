@@ -39,7 +39,7 @@ jobs:
         name: code
         path: .
   Docker-image:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: Build
     steps:
     - name: Download code
