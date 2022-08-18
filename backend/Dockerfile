@@ -6,10 +6,8 @@ ADD . /build/
 
 WORKDIR /build/
 
-RUN bash ls && go build .
+RUN go get github.com/gomodule/redigo \
+&& go get gopkg.in/yaml.v2 \
+&& go build .
 
-
-FROM alpine:3.16
-COPY --from=builder /build/backend .
-
-ENTRYPOINT [ "./backend" ]
+CMD [ "/build/backend" ]

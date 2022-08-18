@@ -8,11 +8,4 @@ WORKDIR /build/
 
 RUN go build .
 
-
-FROM alpine:3.16
-COPY --from=builder /build/frontend .
-
-COPY static ./static
-COPY templates ./templates
-
-ENTRYPOINT [ "./frontend" ]
+CMD [ "/build/frontend" ]
