@@ -1,5 +1,5 @@
 #!/bin/bash
 cd ./backend
-go build
+go build .
 cd ../frontend
-go build
+go build .
