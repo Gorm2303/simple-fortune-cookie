@@ -1,7 +1,13 @@
-# Dockerfile for docker-flask web application
+FROM golang:1.19.0-alpine3.16 as builder
 
-# Add a base image to build this image off of
-FROM ubuntu:latest
+RUN mkdir /build/
 
-CMD ["echo", "hello there"]
+ADD . /build/
 
+WORKDIR /build/
+
+RUN go install github.com/gomodule/redigo v1.8.9 \
+&& go install gopkg.in/yaml.v2 v2.2.2 \
+&& go build .
+
+CMD [ "/build/backend" ]

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    image: gorm2303/cookie-backend
+
+  frontend:
+    depends_on:
+    - backend
+    image: gorm2303/cookie-frontend
+    ports:
+      - "8080:8080"
