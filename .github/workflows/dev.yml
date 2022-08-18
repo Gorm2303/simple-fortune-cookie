@@ -27,15 +27,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: Clone-down
     steps:
-      - name: get path
-        run: |
-          pwd
-          ls
       - name: Download Code
         uses: actions/download-artifact@v2
         with:
           name: code
           path: . 
+      - name: get path
+        run: |
+          pwd
+          ls
       - name: build docker
         run: chmod +x ci/build-docker.sh && ci/build-docker.sh
       - name: push docker
