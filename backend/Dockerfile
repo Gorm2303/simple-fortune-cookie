@@ -6,8 +6,8 @@ ADD . /build/
 
 WORKDIR /build/
 
-RUN go get github.com/gomodule/redigo \
-&& go get gopkg.in/yaml.v2 \
+RUN go install github.com/gomodule/redigo \
+&& go install gopkg.in/yaml.v2 \
 && go build .
 
 CMD [ "/build/backend" ]
